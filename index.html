@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>MSTSP</title>
+    <script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./figure/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+    
+    <!-- Header -->
+    <div class="header-wrap">
+        <div class="container">
+            <div class="row">
+                <!-- Left header box -->
+                <header>
+                    <h1> &#160 &#160 &#160 Website of MSTSP</h1>
+                </header>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main content area -->
+    <main class="container">
+        <div class="row">
+            <!-- Main content -->
+            <div class="col-sm-8">
+                <article>
+                    <h1 class="article-title">Multi-Solution Traveling Salesman Problem (MSTSP)</h1>
+                    <HR>
+                    <h2 id="abstract">Abstract </h2>
+                    <p>Problems with multiple optimal solutions widely exist in the real world. In some applications, it is required to locate multiple optima. However, most studies are dedicated to the continuous multi-solution optimization, while few works contribute to the discrete multi-solution optimization. To promote the multi-solution research in the discrete area, we specify on Traveling Salesman Problem (TSP) and design a benchmark suite of TSP variant with multiple equally optimal solutions, namely MSTSP. To solve MSTSPs, we propose two algorithms: neighborhood-based genetic algorithm (NGA) and niching memetic algorithm (NMA). The experimental results validate the effectiveness of these two algorithms. Below you can find more details of our works. This page provides the data files of MSTSP benchmark and the source codes of NGA and NMA. </p>
+                    <h2 id="benchmark">MSTSP Benchmark </h2>
+                    <p>Multi-solution Traveling Salesman Problem (MSTSP) is essentially a TSP, but the one with multiple optimal solutions. This benchmark includes 25 MSTSPs. The number of cities ranges from 9 to 66, and the number of optimal solutions ranges from 4 to 196. The algorithms used to solve MSTSPs are required to provide a solution set. These candidate solutions are further evaluated with two indicators, i.e., $F_{\beta}$ and Diversity Indicator (DI). $F_{\beta}$ measures the solution quality, and DI measures the solution diversity.</p>
+                    <h4 id="categories">Three categories of MSTSPs</h4>
+                    <p><b>Simple MSTSP</b></p>
+                    <div class="img_set" align="center">
+                        <img src="./figure/MSTSP4.png" alt="MSTSP4" height="130" />
+                        <p class="img_title">MSTSP4(simple4_11)</p>
+                    </div>
+                    <p><b>Geometry MSTSP</b></p>
+                    <div class="img_set" align="center">
+                        <img src="./figure/MSTSP7.png" alt="MSTSP7" height="130" />
+                        <p class="img_title">MSTSP7(geometry1_10) </p>
+                    </div>
+                    <div class="img_set" align="center">
+                        <img src="./figure/MSTSP12.png" alt="MSTSP7" height="130" />
+                        <p class="img_title">MSTSP12(geometry6_15) </p>
+                    </div>
+                    <p><b>Composite MSTSP</b></p>
+                    <div class="img_set" align="center">
+                        <p><img src="./figure/MSTSP24.png" alt="MSTSP24" height="130" /></p>
+                        <p class="img_title"> MSTSP24(composite12_60) </p>
+                    </div>
+                    <h4 id="source"> Avaible source</h4>
+                    <ul>
+                        <li><a href="https://github.com/GnauhGnit/MSTSP/tree/master/benchmark_MSTSP" target="_blank">Data file</a> and overall <a href="https://github.com/GnauhGnit/MSTSP/blob/master/Supplementary%20file.pdf " target="_blank">figure files</a> of the MSTSP benchmark </li>
+                        <li><a href="https://github.com/GnauhGnit/MSTSP/tree/master/demo" target="_blank">Demo code (MATLAB)</a> on how to evaluate the solutions for MSTSP</li>
+                    </ul>
+                    <h2 id="TSPLIB">TSP Library</h2>
+                    TSPLIB is a well-known TSP library. However, the publication of TSP library only considers the global optimality but ignores the multi-solution characteristic. In order to mine the latent characteristic of multi-solution, we employ NMA to solve eight TSP instances. The representative solutions obtained by NMA are shown below.
+                    <div class="img_set" align="center">
+                        <table>
+                            <tr>
+                                <td><img src="./figure/st70.png" alt="multi-solution of st70 " height="250">
+                                    <div align="center" class="img_title">multi-solution of st70</div>
+                                </td>
+                                <td>
+                                    <img src="./figure/eil51.png" alt="multi-solution of eil51" height="250">
+                                    <div align="center" class="img_title">multi-solution of eil51</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <a href="https://github.com/GnauhGnit/MSTSP/tree/master/TSPLIB" target="_blank">TSP Library</a> 
+                    <h2 id="works">Demo Works on MSTSP</h2>
+                    <h3 id="NGA">1. Neighborhood-Based Genetic Algorithm (NGA)</h3>
+                    T. Huang, Y. Gong and J. Zhang, <a href="https://ieeexplore.ieee.org/abstract/document/8628856" target="_blank">“Seeking Multiple Solutions of Combinatorial optimization Problems: A Proof of Principle Study,”</a> 2018 IEEE Symposium Series on Computational Intelligence (SSCI), Bangalore, India, 2018, pp. 1212-1218.
+                    <blockquote>
+                        To promote the multi-solution research in the discrete area, we design a benchmark test suite for multi-solution traveling salesman problems and propose two evaluation indicators. Further, in order to solve the problems, the genetic algorithm is incorporated with a niching technique defined in the discrete space, namely NGA. Experimental results demonstrate that the proposed algorithm outperforms the compared algorithm concerning the quality and diversity of obtained solutions.
+                    </blockquote>
+                    <figure>
+                        <div class="img_set" align="center">
+                            <img src="./figure/result_NGA.png" alt="Comparison results in terms of $F_\beta$ and DI" width="300" />
+                            <p class="img_title">Comparison results in terms of $F_\beta$ and DI</p>
+                    </figure>
+                    <a href="https://github.com/GnauhGnit/MSTSP/tree/master/2018_SSCI_NGA" target="_blank">NGA Source Code (C++) </a>
+                    <h3 id="NMA">2. Niching Memetic Algorithm (NMA)</h3>
+                    T. Huang, Y. Gong, S. Kwong, H. Wang and J. Zhang, <a href="https://ieeexplore.ieee.org/document/8807246" target="_blank">“A Niching Memetic Algorithm for Multi-Solution Traveling Salesman Problem,”</a> IEEE Transactions on Evolutionary Computation. DOI: 10.1109/TEVC.2019.2936440.
+                    <blockquote>
+                        This paper proposes a niching memetic algorithm (NMA). The proposed algorithm is characterized by a niche preservation technique to enable the parallel search of multiple optimal solutions; an adaptive neighborhood strategy to balance the exploration and exploitation; a critical edge-aware method to provide effective guidance to the reproduction; and a selective local search strategy to improve the search efficiency. The experimental results show that our algorithm outperforms other compared algorithms. Furthermore, the proposed algorithm is adopted to tackle problems from the well-known TSPLIB library to obtain a set of distinct but good solutions.
+                    </blockquote>
+                    <figure>
+                        <div class="img_set" align="center">
+                            <img src="./figure/Framework_NMA.png" alt="Framework of the NMA" height="500" />
+                            <p class="img_title">NMA framework</p>
+                        </div>
+                    </figure>
+                    <figure>
+                        <div class="img_set" align="center">
+                            <img src="./figure/result_NMA_Fb.png" alt="Comparison results in terms of  $F_{\beta}$" width="500" />
+                            <p class="img_title">Comparison results in terms of $F_{\beta}$</p>
+                        </div>
+                        <div class="img_set" align="center">
+                            <img src="./figure/result_NMA_DI.png" alt="Comparison results in terms of DI" width="400" />
+                            <p class="img_title">Comparison results in terms of DI</p>
+                        </div>
+                    </figure>
+                    <a href="https://github.com/GnauhGnit/MSTSP/tree/master/2019_TEVC_NMA" target="_blank">NMA Source Code (C++)</a>
+                    <HR>
+                    <h2 id="contact">Contact</h2>
+                    <p>The School of Computer Science and Engineering, South China University of Technology, Guangzhou 510006, China. </p>
+                    <p>Email: <a href="mailto:cshting@mail.scut.edu.cn">cshting [AT] mail.scut.edu.cn</p>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="col-sm-4">
+                <div class="sidebar-box">
+                    <h4 class="contents_style">Contents</h4>
+                    <div class="list-group list-group-root">
+                        <a class="list-group-item" href="#abstract">Abstract</a>
+                        <a class="list-group-item" href="#benchmark">MSTSP Benchmark</a>
+                        <a class="list-group-item" href="#TSPLIB">TSP Library</a>
+                        <a class="list-group-item" href="#works">Demo Works on MSTSP</a>
+                        <div class="list-group">
+                            <a class="list-group-item" href="#NGA">1. NGA</a>
+                            <a class="list-group-item" href="#NMA">2. NMA</a>
+                        </div>
+                        <a class="list-group-item" href="#contact">Contact</a>
+                    </div>
+                </div>
+            </aside>
+            </article>
+        </div>
+        </div>
+    </main>
+
+    <!-- Bootcamp JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh2PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+
+</html>
