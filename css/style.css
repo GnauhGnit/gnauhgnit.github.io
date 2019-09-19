@@ -9174,6 +9174,16 @@ Specify
     align-content: center;
     align-self: center;
 }
+.table_title {
+    color: #999;
+    font-size: 1.1rem;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+        margin-top: 1rem;
+    margin-bottom: 0;
+}
+
 
 .img_set {
     align-items: center;
@@ -9185,4 +9195,57 @@ Specify
     padding: 0.75rem 1.25rem;
     margin-bottom: -1px;
     background-color: #507dbc;
+}
+/****
+Table Style
+****/
+table.blueTable {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #1C6EA4;
+  background-color: #FFFFFF;
+  width: 80%;
+  height: 100%;
+  text-align: center;
+  border-collapse: collapse;
+      margin-bottom: 1rem;
+}
+table.blueTable td, table.blueTable th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.blueTable tbody td {
+  font-size: 15px;
+  color: #999999;
+}
+table.blueTable thead {
+  background: #507DBC;
+ /* border-bottom: 2px solid #444444;*/
+}
+table.blueTable thead th {
+  font-size: 16px;
+    font-weight: 400;
+  font-family: "Source Sans Pro", Arial, "sans-serif";
+  /*font-weight: bold;*/
+  color: #FFFFFF;
+  text-align: center;
+ /* border-left: 2px solid #D0E4F5;*/
+}
+table.blueTable thead th:first-child {
+  border-left: none;
+}
+
+table.blueTable tfoot td {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Source Sans Pro", Arial, "sans-serif";
+}
+table.blueTable tfoot .links {
+  text-align: right;
+}
+table.blueTable tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
 }
