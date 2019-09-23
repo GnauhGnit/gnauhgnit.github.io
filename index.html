@@ -3,15 +3,8 @@
 
 <head>
     <title>MSTSP</title>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-        inlineMath: [['$','$']]
-      }
-    });
-  </script>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config"> MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Main CSS -->
@@ -65,13 +58,38 @@
                         <p><img src="./figure/MSTSP24.png" alt="MSTSP24" height="130" /></p>
                         <p class="img_title"> MSTSP24(composite12_60) </p>
                     </div>
+                    <div align="left">
+                        <p><img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_1.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_2.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_3.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_4.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_5.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_6.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_7.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_8.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_9.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_10.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_11.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_12.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_13.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_14.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_15.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_16.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_17.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_18.png" />
+                            <img class="subtour" src="./figure/MSTSP24_subtour/composite12_60_19.png" />
+                            <p class="img_title" align="center"> subtours of MSTSP24 </p>
+                        </p>
+                    </div>
                     <h4 id="source"> Avaible source</h4>
-                    <ul>
-                        <li><a href="https://github.com/GnauhGnit/MSTSP/tree/master/benchmark_MSTSP" target="_blank">Data file</a> and overall <a href="https://github.com/GnauhGnit/MSTSP/blob/master/Supplementary%20file.pdf " target="_blank">figure files</a> of the MSTSP benchmark </li>
-                        <li><a href="https://github.com/GnauhGnit/MSTSP/tree/master/demo" target="_blank">Demo code (MATLAB)</a> on how to evaluate the solutions for MSTSP</li>
-                    </ul>
+                    <p>
+                        <ul>
+                            <li>Data file of the <a href="https://github.com/GnauhGnit/MSTSP/tree/master/benchmark_MSTSP" target="_blank">MSTSP benchmark</a> </li>
+                            <li><a href="https://github.com/GnauhGnit/MSTSP/tree/master/demo" target="_blank">Demo code (MATLAB)</a> on how to evaluate the solutions for MSTSP</li>
+                        </ul>
+                    </p>
                     <h2 id="TSPLIB">TSPLIB-ms</h2>
-                    Apart from the above MSTSP benchmark, an MSTSP optimizer can be further evaluated by the well-known TSPLIB. Many instances in TSPLIB possess multi-solution characteristics, but the previous studies using this test suite consider one global optimum only. We defined a subset of TSPLIB, named TSPLIB-ms, which contains eight instances with multiple good solutions: eil51, berlin52, st70, pr76, kroA100, and lin105. The developers of MSTSP solvers are also suggested to test their algorithms on the TSPLIB-ms. The solutions are identiﬁed as optima when their lengths are shorter than a certain threshold length: (1 + $\sigma$) × (the optimal tour length provided by the TSPLIB), where σ is set to 0.1. As an example, the representative solutions obtained by NMA on the st70 and eil51 are shown below.
+                    Apart from the above MSTSP benchmark, an MSTSP optimizer can be further evaluated by the well-known TSPLIB. Many instances in TSPLIB possess multi-solution characteristics, but the previous studies using this test suite consider one global optimum only. We defined a subset of TSPLIB, named TSPLIB-ms, which contains eight instances with multiple good solutions: eil51, berlin52, st70, pr76, kroA100, lin105. The developers of MSTSP solvers are also suggested to test their algorithms on the TSPLIB-ms and provide the final solution set with superior and diverse solutions. To be specific, the provided solutions should meet the following two requirements. (1) The length is shorter than a certain threshold length: (1 + $\sigma$) × (the optimal tour length provided by the TSPLIB), where $\sigma$ is set to 0.1. (2) The maximum sharing distance of each pair of cities is less than 0.8 × <i>N</i> (<i>N</i> denotes the number of cities). As an example, the representative solutions obtained by NMA on the st70 and eil51 are shown below.
                     <div class="img_set" align="center">
                         <table>
                             <tr>
@@ -85,352 +103,350 @@
                             </tr>
                         </table>
                     </div>
-                    <a href="https://github.com/GnauhGnit/MSTSP/tree/master/TSPLIB-ms" target="_blank">Data file of </a>TSPLIB-ms</br>
-                    <h2 id="works">Demo Works on MSTSP</h2>
-                    <h3 id="NGA">1. Neighborhood-Based Genetic Algorithm (NGA)</h3>
-                    T. Huang, Y. Gong and J. Zhang, <a href="https://ieeexplore.ieee.org/abstract/document/8628856" target="_blank">“Seeking Multiple Solutions of Combinatorial optimization Problems: A Proof of Principle Study,”</a> 2018 IEEE Symposium Series on Computational Intelligence (SSCI), Bangalore, India, 2018, pp. 1212-1218.
-                    <blockquote>
-                        To promote the multi-solution research in the discrete area, we design a benchmark test suite for multi-solution traveling salesman problems and propose two evaluation indicators. Further, in order to solve the problems, the genetic algorithm is incorporated with a niching technique defined in the discrete space, namely NGA. Experimental results demonstrate that the proposed algorithm outperforms the compared algorithm concerning the quality and diversity of obtained solutions.
-                    </blockquote>
-                    <div align="center">
-                        <p class="table_title">The results in terms of $F_\beta$ and DI obtained by NGA.</p>
-                        <table class="blueTable" align="center">
-                            <thead>
-                                <tr>
-                                    <th> <b>MSTSP </b></th>
-                                    <th>MSTSP1 </th>
-                                    <th>MSTSP2 </th>
-                                    <th>MSTSP3 </th>
-                                    <th>MSTSP4 </th>
-                                    <th>MSTSP5 </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><b>$F_\beta$</b></td>
-                                    <td>0.973</td>
-                                    <td>0.959</td>
-                                    <td>0.935</td>
-                                    <td>0.932</td>
-                                    <td>0.846</td>
-                                </tr>
-                                <tr>
-                                    <td><b>DI</b></td>
-                                    <td>0.980</td>
-                                    <td>0.972</td>
-                                    <td>0.957</td>
-                                    <td>0.947</td>
-                                    <td>0.916</td>
-                                </tr>
-                            </tbody>
-                            <thead>
-                                <tr>
-                                    <th><b>MSTSP </b></th>
-                                    <th>MSTSP6 </th>
-                                    <th>MSTSP7 </th>
-                                    <th>MSTSP8 </th>
-                                    <th>MSTSP9 </th>
-                                    <th>MSTSP10 </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><b>$F_\beta$</b></td>
-                                    <td>0.877</td>
-                                    <td>0.769</td>
-                                    <td>0.578</td>
-                                    <td>0.974</td>
-                                    <td>0.969</td>
-                                </tr>
-                                <tr>
-                                    <td><b>DI</b></td>
-                                    <td>0.943</td>
-                                    <td>0.869</td>
-                                    <td>0.838</td>
-                                    <td>0.975</td>
-                                    <td>0.969</td>
-                                </tr>
-                            </tbody>
-                            <thead>
-                                <tr>
-                                    <th><b>MSTSP </b></th>
-                                    <th>MSTSP11 </th>
-                                    <th>MSTSP12</th>
-                                    <th>MSTSP13 </th>
-                                    <th>MSTSP14 </th>
-                                    <th>MSTSP15 </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><b>$F_\beta$</b></td>
-                                    <td>0.949</td>
-                                    <td>0.331</td>
-                                    <td>0.096</td>
-                                    <td>0.172</td>
-                                    <td>0.416</td>
-                                </tr>
-                                <tr>
-                                    <td><b>DI</b></td>
-                                    <td>0.963</td>
-                                    <td>0.809</td>
-                                    <td>0.792</td>
-                                    <td>0.844</td>
-                                    <td>0.847</td>
-                                </tr>
-                            </tbody>
-                            <thead>
-                                <tr>
-                                    <th><b>MSTSP </b></th>
-                                    <th>MSTSP16 </th>
-                                    <th>MSTSP17</th>
-                                    <th>MSTSP18 </th>
-                                    <th>MSTSP19 </th>
-                                    <th>MSTSP20 </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><b>$F_\beta$</b></td>
-                                    <td>0.054</td>
-                                    <td>0.044</td>
-                                    <td>0.031</td>
-                                    <td>0.007</td>
-                                    <td>0.000</td>
-                                </tr>
-                                <tr>
-                                    <td><b>DI</b></td>
-                                    <td>0.783</td>
-                                    <td>0.803</td>
-                                    <td>0.704</td>
-                                    <td>0.699</td>
-                                    <td>0.671</td>
-                                </tr>
-                            </tbody>
-                            <thead>
-                                <tr>
-                                    <th><b>MSTSP </b></th>
-                                    <th>MSTSP21 </th>
-                                    <th>MSTSP22</th>
-                                    <th>MSTSP23 </th>
-                                    <th>MSTSP24 </th>
-                                    <th>MSTSP25 </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><b>$F_\beta$</b></td>
-                                    <td>0.000</td>
-                                    <td>0.000</td>
-                                    <td>0.000</td>
-                                    <td>0.000</td>
-                                    <td>0.000</td>
-                                </tr>
-                                <tr>
-                                    <td><b>DI</b></td>
-                                    <td>0.628</td>
-                                    <td>0.409</td>
-                                    <td>0.344</td>
-                                    <td>0.319</td>
-                                    <td>0.270</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <a href="https://github.com/GnauhGnit/MSTSP/tree/master/2018_SSCI_NGA" target="_blank">NGA Source Code (C++) </a>
-                    </br>
-                    <h3 id="NMA">2. Niching Memetic Algorithm (NMA)</h3>
-                    T. Huang, Y. Gong, S. Kwong, H. Wang and J. Zhang, <a href="https://ieeexplore.ieee.org/document/8807246" target="_blank">“A Niching Memetic Algorithm for Multi-Solution Traveling Salesman Problem,”</a> IEEE Transactions on Evolutionary Computation. DOI: 10.1109/TEVC.2019.2936440.
-                    <blockquote>
-                        This paper proposes a niching memetic algorithm (NMA). The proposed algorithm is characterized by a niche preservation technique to enable the parallel search of multiple optimal solutions; an adaptive neighborhood strategy to balance the exploration and exploitation; a critical edge-aware method to provide effective guidance to the reproduction; and a selective local search strategy to improve the search efficiency. The experimental results show that our algorithm outperforms other compared algorithms. Furthermore, the proposed algorithm is adopted to tackle problems from the well-known TSPLIB library to obtain a set of distinct but good solutions.
-                    </blockquote>
-                    <div align="center">
-                        <p class="table_title">The results in terms of $F_\beta$ and DI obtained by NMA.</p>
-                        <table class="blueTable" align="center">
-                            <thead>
-                                <tr>
-                                    <th> <b>MSTSP </b></th>
-                                    <th>MSTSP1 </th>
-                                    <th>MSTSP2 </th>
-                                    <th>MSTSP3 </th>
-                                    <th>MSTSP4 </th>
-                                    <th>MSTSP5 </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><b>$F_\beta$</b></td>
-                                    <td>1.000</td>
-                                    <td>1.000 </td>
-                                    <td>1.000 </td>
-                                    <td>1.000 </td>
-                                    <td>1.000 </td>
-                                </tr>
-                                <tr>
-                                    <td><b>DI</b></td>
-                                    <td>1.000</td>
-                                    <td>1.000 </td>
-                                    <td>1.000 </td>
-                                    <td>1.000 </td>
-                                    <td>1.000 </td>
-                                </tr>
-                            </tbody>
-                            <thead>
-                                <tr>
-                                    <th><b>MSTSP </b></th>
-                                    <th>MSTSP6 </th>
-                                    <th>MSTSP7 </th>
-                                    <th>MSTSP8 </th>
-                                    <th>MSTSP9 </th>
-                                    <th>MSTSP10 </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><b>$F_\beta$</b></td>
-                                    <td>1.000</td>
-                                    <td>0.923 </td>
-                                    <td>0.772 </td>
-                                    <td>1.000 </td>
-                                    <td>1.000 </td>
-                                </tr>
-                                <tr>
-                                    <td><b>DI</b></td>
-                                    <td>1.000</td>
-                                    <td>0.945 </td>
-                                    <td>0.898 </td>
-                                    <td>1.000 </td>
-                                    <td>1.000 </td>
-                                </tr>
-                            </tbody>
-                            <thead>
-                                <tr>
-                                    <th><b>MSTSP </b></th>
-                                    <th>MSTSP11 </th>
-                                    <th>MSTSP12</th>
-                                    <th>MSTSP13 </th>
-                                    <th>MSTSP14 </th>
-                                    <th>MSTSP15 </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><b>$F_\beta$</b></td>
-                                    <td>1.000</td>
-                                    <td>0.535 </td>
-                                    <td>0.611 </td>
-                                    <td>0.883 </td>
-                                    <td>0.732 </td>
-                                </tr>
-                                <tr>
-                                    <td><b>DI</b></td>
-                                    <td>1.000</td>
-                                    <td>0.871 </td>
-                                    <td>0.922 </td>
-                                    <td>0.981 </td>
-                                    <td>0.932 </td>
-                                </tr>
-                            </tbody>
-                            <thead>
-                                <tr>
-                                    <th><b>MSTSP </b></th>
-                                    <th>MSTSP16 </th>
-                                    <th>MSTSP17</th>
-                                    <th>MSTSP18 </th>
-                                    <th>MSTSP19 </th>
-                                    <th>MSTSP20 </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><b>$F_\beta$</b></td>
-                                    <td>0.554</td>
-                                    <td>0.605</td>
-                                    <td>0.571</td>
-                                    <td>0.168</td>
-                                    <td>0.165</td>
-                                </tr>
-                                <tr>
-                                    <td><b>DI</b></td>
-                                    <td>0.926</td>
-                                    <td>0.944</td>
-                                    <td>0.932</td>
-                                    <td>0.865</td>
-                                    <td>0.865</td>
-                                </tr>
-                            </tbody>
-                            <thead>
-                                <tr>
-                                    <th><b>MSTSP </b></th>
-                                    <th>MSTSP21 </th>
-                                    <th>MSTSP22</th>
-                                    <th>MSTSP23 </th>
-                                    <th>MSTSP24 </th>
-                                    <th>MSTSP25 </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><b>$F_\beta$</b></td>
-                                    <td>0.023</td>
-                                    <td>0.013</td>
-                                    <td>0.016</td>
-                                    <td>0.010</td>
-                                    <td>0.002</td>
-                                </tr>
-                                <tr>
-                                    <td><b>DI</b></td>
-                                    <td>0.834</td>
-                                    <td>0.816</td>
-                                    <td>0.829</td>
-                                    <td>0.811</td>
-                                    <td>0.747</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div align="center">
-                        <p class="table_title">The number of satisfactory solutions obtained by NMA.</p>
-                        <table class="blueTable" align="center">
-                            <thead>
-                                <tr>
-                                    <th><b>TSPLIB_ms </b></th>
-                                    <th>eil51 </th>
-                                    <th>berlin52 </th>
-                                    <th>st70 </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><b>No. Solution</b></td>
-                                    <td>5.84</td>
-                                    <td>4.54</td>
-                                    <td>6.00</td>
-                                </tr>
+                    <p>Data file of the <a href="https://github.com/GnauhGnit/MSTSP/tree/master/TSPLIB-ms" target="_blank">TSPLIB-ms</a>
+                        <h2 id="works">Demo Works on MSTSP</h2>
+                        <h3 id="NGA">1. Neighborhood-Based Genetic Algorithm (NGA)</h3>
+                        T. Huang, Y. Gong and J. Zhang, <a href="https://ieeexplore.ieee.org/abstract/document/8628856" target="_blank">“Seeking Multiple Solutions of Combinatorial optimization Problems: A Proof of Principle Study,”</a> 2018 IEEE Symposium Series on Computational Intelligence (SSCI), Bangalore, India, 2018, pp. 1212-1218.
+                        <blockquote>
+                            To promote the multi-solution research in the discrete area, we design a benchmark test suite for multi-solution traveling salesman problems and propose two evaluation indicators. Further, in order to solve the problems, the genetic algorithm is incorporated with a niching technique defined in the discrete space, namely NGA. Experimental results demonstrate that the proposed algorithm outperforms the compared algorithm concerning the quality and diversity of obtained solutions.
+                        </blockquote>
+                        <div align="center">
+                            <p class="table_title">The results in terms of $F_\beta$ and DI obtained by NGA MSTSPs.</p>
+                            <table class="blueTable" align="center">
+                                <thead>
+                                    <tr>
+                                        <th> <b>MSTSP </b></th>
+                                        <th>MSTSP1 </th>
+                                        <th>MSTSP2 </th>
+                                        <th>MSTSP3 </th>
+                                        <th>MSTSP4 </th>
+                                        <th>MSTSP5 </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>$F_\beta$</b></td>
+                                        <td>0.973</td>
+                                        <td>0.959</td>
+                                        <td>0.935</td>
+                                        <td>0.932</td>
+                                        <td>0.846</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>DI</b></td>
+                                        <td>0.980</td>
+                                        <td>0.972</td>
+                                        <td>0.957</td>
+                                        <td>0.947</td>
+                                        <td>0.916</td>
+                                    </tr>
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th><b>MSTSP </b></th>
+                                        <th>MSTSP6 </th>
+                                        <th>MSTSP7 </th>
+                                        <th>MSTSP8 </th>
+                                        <th>MSTSP9 </th>
+                                        <th>MSTSP10 </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>$F_\beta$</b></td>
+                                        <td>0.877</td>
+                                        <td>0.769</td>
+                                        <td>0.578</td>
+                                        <td>0.974</td>
+                                        <td>0.969</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>DI</b></td>
+                                        <td>0.943</td>
+                                        <td>0.869</td>
+                                        <td>0.838</td>
+                                        <td>0.975</td>
+                                        <td>0.969</td>
+                                    </tr>
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th><b>MSTSP </b></th>
+                                        <th>MSTSP11 </th>
+                                        <th>MSTSP12</th>
+                                        <th>MSTSP13 </th>
+                                        <th>MSTSP14 </th>
+                                        <th>MSTSP15 </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>$F_\beta$</b></td>
+                                        <td>0.949</td>
+                                        <td>0.331</td>
+                                        <td>0.096</td>
+                                        <td>0.172</td>
+                                        <td>0.416</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>DI</b></td>
+                                        <td>0.963</td>
+                                        <td>0.809</td>
+                                        <td>0.792</td>
+                                        <td>0.844</td>
+                                        <td>0.847</td>
+                                    </tr>
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th><b>MSTSP </b></th>
+                                        <th>MSTSP16 </th>
+                                        <th>MSTSP17</th>
+                                        <th>MSTSP18 </th>
+                                        <th>MSTSP19 </th>
+                                        <th>MSTSP20 </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>$F_\beta$</b></td>
+                                        <td>0.054</td>
+                                        <td>0.044</td>
+                                        <td>0.031</td>
+                                        <td>0.007</td>
+                                        <td>0.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>DI</b></td>
+                                        <td>0.783</td>
+                                        <td>0.803</td>
+                                        <td>0.704</td>
+                                        <td>0.699</td>
+                                        <td>0.671</td>
+                                    </tr>
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th><b>MSTSP </b></th>
+                                        <th>MSTSP21 </th>
+                                        <th>MSTSP22</th>
+                                        <th>MSTSP23 </th>
+                                        <th>MSTSP24 </th>
+                                        <th>MSTSP25 </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>$F_\beta$</b></td>
+                                        <td>0.000</td>
+                                        <td>0.000</td>
+                                        <td>0.000</td>
+                                        <td>0.000</td>
+                                        <td>0.000</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>DI</b></td>
+                                        <td>0.628</td>
+                                        <td>0.409</td>
+                                        <td>0.344</td>
+                                        <td>0.319</td>
+                                        <td>0.270</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p> <a href="https://github.com/GnauhGnit/MSTSP/tree/master/2018_SSCI_NGA" target="_blank">NGA Source Code (C++) </a></p>
+                        <h3 id="NMA">2. Niching Memetic Algorithm (NMA)</h3>
+                        T. Huang, Y. Gong, S. Kwong, H. Wang and J. Zhang, <a href="https://ieeexplore.ieee.org/document/8807246" target="_blank">“A Niching Memetic Algorithm for Multi-Solution Traveling Salesman Problem,”</a> IEEE Transactions on Evolutionary Computation. DOI: 10.1109/TEVC.2019.2936440.
+                        <blockquote>
+                            This paper proposes a niching memetic algorithm (NMA). The proposed algorithm is characterized by a niche preservation technique to enable the parallel search of multiple optimal solutions; an adaptive neighborhood strategy to balance the exploration and exploitation; a critical edge-aware method to provide effective guidance to the reproduction; and a selective local search strategy to improve the search efficiency. The experimental results show that our algorithm outperforms other compared algorithms. Furthermore, the proposed algorithm is adopted to tackle problems from the well-known TSPLIB library to obtain a set of distinct but good solutions.
+                        </blockquote>
+                        <div align="center">
+                            <p class="table_title">The results in terms of $F_\beta$ and DI obtained by NMA on MSTSPs.</p>
+                            <table class="blueTable" align="center">
+                                <thead>
+                                    <tr>
+                                        <th> <b>MSTSP </b></th>
+                                        <th>MSTSP1 </th>
+                                        <th>MSTSP2 </th>
+                                        <th>MSTSP3 </th>
+                                        <th>MSTSP4 </th>
+                                        <th>MSTSP5 </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>$F_\beta$</b></td>
+                                        <td>1.000</td>
+                                        <td>1.000 </td>
+                                        <td>1.000 </td>
+                                        <td>1.000 </td>
+                                        <td>1.000 </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>DI</b></td>
+                                        <td>1.000</td>
+                                        <td>1.000 </td>
+                                        <td>1.000 </td>
+                                        <td>1.000 </td>
+                                        <td>1.000 </td>
+                                    </tr>
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th><b>MSTSP </b></th>
+                                        <th>MSTSP6 </th>
+                                        <th>MSTSP7 </th>
+                                        <th>MSTSP8 </th>
+                                        <th>MSTSP9 </th>
+                                        <th>MSTSP10 </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>$F_\beta$</b></td>
+                                        <td>1.000</td>
+                                        <td>0.923 </td>
+                                        <td>0.772 </td>
+                                        <td>1.000 </td>
+                                        <td>1.000 </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>DI</b></td>
+                                        <td>1.000</td>
+                                        <td>0.945 </td>
+                                        <td>0.898 </td>
+                                        <td>1.000 </td>
+                                        <td>1.000 </td>
+                                    </tr>
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th><b>MSTSP </b></th>
+                                        <th>MSTSP11 </th>
+                                        <th>MSTSP12</th>
+                                        <th>MSTSP13 </th>
+                                        <th>MSTSP14 </th>
+                                        <th>MSTSP15 </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>$F_\beta$</b></td>
+                                        <td>1.000</td>
+                                        <td>0.535 </td>
+                                        <td>0.611 </td>
+                                        <td>0.883 </td>
+                                        <td>0.732 </td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>DI</b></td>
+                                        <td>1.000</td>
+                                        <td>0.871 </td>
+                                        <td>0.922 </td>
+                                        <td>0.981 </td>
+                                        <td>0.932 </td>
+                                    </tr>
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th><b>MSTSP </b></th>
+                                        <th>MSTSP16 </th>
+                                        <th>MSTSP17</th>
+                                        <th>MSTSP18 </th>
+                                        <th>MSTSP19 </th>
+                                        <th>MSTSP20 </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>$F_\beta$</b></td>
+                                        <td>0.554</td>
+                                        <td>0.605</td>
+                                        <td>0.571</td>
+                                        <td>0.168</td>
+                                        <td>0.165</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>DI</b></td>
+                                        <td>0.926</td>
+                                        <td>0.944</td>
+                                        <td>0.932</td>
+                                        <td>0.865</td>
+                                        <td>0.865</td>
+                                    </tr>
+                                </tbody>
+                                <thead>
+                                    <tr>
+                                        <th><b>MSTSP </b></th>
+                                        <th>MSTSP21 </th>
+                                        <th>MSTSP22</th>
+                                        <th>MSTSP23 </th>
+                                        <th>MSTSP24 </th>
+                                        <th>MSTSP25 </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>$F_\beta$</b></td>
+                                        <td>0.023</td>
+                                        <td>0.013</td>
+                                        <td>0.016</td>
+                                        <td>0.010</td>
+                                        <td>0.002</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>DI</b></td>
+                                        <td>0.834</td>
+                                        <td>0.816</td>
+                                        <td>0.829</td>
+                                        <td>0.811</td>
+                                        <td>0.747</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div align="center">
+                            <p class="table_title">The number of satisfactory solutions obtained by NMA on TSPLIB_ms.</p>
+                            <table class="blueTable" align="center">
                                 <thead>
                                     <tr>
                                         <th><b>TSPLIB_ms </b></th>
-                                        <th>pr76</th>
-                                        <th>kroA100</th>
-                                        <th>lin105</th>
+                                        <th>eil51 </th>
+                                        <th>berlin52 </th>
+                                        <th>st70 </th>
                                     </tr>
                                 </thead>
-                                <tr>
-                                    <td><b>No. Solution</b></td>
-                                    <td>5.12</td>
-                                    <td>5.36</td>
-                                    <td>4.54</td>
+                                <tbody>
+                                    <tr>
+                                        <td><b>No. Solution</b></td>
+                                        <td>5.84</td>
+                                        <td>4.54</td>
+                                        <td>6.00</td>
+                                    </tr>
+                                    <thead>
+                                        <tr>
+                                            <th><b>TSPLIB_ms </b></th>
+                                            <th>pr76</th>
+                                            <th>kroA100</th>
+                                            <th>lin105</th>
+                                        </tr>
+                                    </thead>
+                                    <tr>
+                                        <td><b>No. Solution</b></td>
+                                        <td>5.12</td>
+                                        <td>5.36</td>
+                                        <td>4.54</td>
+                                    </tr>
+                                </tbody>
                                 </tr>
-                            </tbody>
-                            </tr>
-                        </table>
-                    </div>
-                    <a href="https://github.com/GnauhGnit/MSTSP/tree/master/2019_TEVC_NMA" target="_blank">NMA Source Code (C++)</a>
-                    </br>
-                    <HR>
-                    <h2 id="contact">Contact</h2>
-                    <p>The School of Computer Science and Engineering, South China University of Technology, Guangzhou 510006, China. </p>
-                    <p>Email: cshting [AT] mail.scut.edu.cn</p>
+                            </table>
+                        </div>
+                        <p><a href="https://github.com/GnauhGnit/MSTSP/tree/master/2019_TEVC_NMA" target="_blank">NMA Source Code (C++)</a></p>
+                        <HR>
+                        <h2 id="contact">Contact</h2>
+                        <p>The School of Computer Science and Engineering, South China University of Technology, Guangzhou 510006, China. </p>
+                        <p>Email: cshting [AT] mail.scut.edu.cn</p>
             </div>
             <!-- Sidebar -->
             <aside class="col-sm-4">
