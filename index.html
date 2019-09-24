@@ -94,7 +94,7 @@
                             </ul>
                         </p>
                         <h2 id="TSPLIB">TSPLIB-ms</h2>
-                        Apart from the above MSTSP benchmark, an MSTSP optimizer can be further evaluated by the well-known TSPLIB. Many instances in TSPLIB possess multi-solution characteristics, but the previous studies using this test suite consider one global optimum only. We defined a subset of TSPLIB, named TSPLIB-ms, which contains eight instances with multiple good solutions: eil51, berlin52, st70, pr76, kroA100, lin105. The developers of MSTSP solvers are also suggested to test their algorithms on the TSPLIB-ms and provide the final solution set with superior and diverse solutions. To be specific, the provided solutions should meet the following two requirements. (1) The length is shorter than a certain threshold length: (1 + $\sigma$) × (the optimal tour length provided by the TSPLIB), where $\sigma$ is set to 0.1. (2) The maximum sharing distance of each pair of cities is less than 0.8 × <i>N</i> (<i>N</i> denotes the number of cities). As an example, the representative solutions obtained by NMA on the st70 and eil51 are shown below.
+                        Apart from the above MSTSP benchmark, an MSTSP optimizer can be further evaluated by the well-known TSPLIB. Many instances in TSPLIB possess multi-solution characteristics, but the previous studies using this test suite consider one global optimum only. We defined a subset of TSPLIB, named TSPLIB-ms, which contains eight instances with multiple good solutions: eil51, berlin52, st70, pr76, kroA100, lin105. The developers of MSTSP solvers are also suggested to test their algorithms on the TSPLIB-ms and provide the final solution set with superior and diverse solutions. To be specific, the provided solutions should meet the following two requirements. (1) The length is shorter than a certain threshold length: (1 + σ) × (the optimal tour length provided by the TSPLIB), where σ is set to 0.1. (2) The sharing distance (a similarity measure) between any two solutions should be smaller than λ x (the number of cities in this instance), where λ is set to 0.8. As an example, the representative solutions obtained by NMA on the st70 and eil51 are shown below.
                         <div class="img_set" align="center">
                             <table>
                                 <tr>
@@ -116,7 +116,7 @@
                             To promote the multi-solution research in the discrete area, we design a benchmark test suite for multi-solution traveling salesman problems and propose two evaluation indicators. Further, in order to solve the problems, the genetic algorithm is incorporated with a niching technique defined in the discrete space, namely NGA. Experimental results demonstrate that the proposed algorithm outperforms the compared algorithm concerning the quality and diversity of obtained solutions.
                         </blockquote>
                         <div align="center">
-                            <p class="table_title">The results in terms of $F_\beta$ and DI obtained by NGA MSTSPs.</p>
+                            <p class="table_title">The results in terms of $F_\beta$ and DI obtained by NGA on MSTSPs.</p>
                             <table class="blueTable" align="center">
                                 <thead>
                                     <tr>
